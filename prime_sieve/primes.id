@@ -1,0 +1,23 @@
+func main () {
+    n = 1000000;
+    bools = List ();
+    foreach (i in range (n - 1)) {
+        bools.add (true);
+    }
+    # floor sqrt 10000 = 100
+    for (i = 2; i <= 1000; i += 1) {
+        if (bools [i - 2]) {
+            i2 = i * i;
+            for (j = i2; j <= n; j += i) {
+                bools [j - 2] = false;
+            } 
+        }
+    }
+    
+    for (k = 0; k < bools.getSize (); k+= 1) {
+       if (bools [k]) {
+           print (k + 2);
+       }
+    }
+}
+
