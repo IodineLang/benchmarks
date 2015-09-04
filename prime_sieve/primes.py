@@ -1,12 +1,13 @@
-def primes_sieve2(limit):
-    a = [True] * limit                        
-    a[0] = a[1] = False
+n = 1000000
+bools = []
+for i in range (0, n - 1):
+    bools.append (True)
+for i in range (2, 1001):
+    if (bools [i - 2]):
+        i2 = i * i
+        for j in range (i2, n + 1, i):
+            bools [j - 2] = False
 
-    for (i, isprime) in enumerate(a):
-        if isprime:
-            yield i
-            for n in xrange(i*i, limit, i):   
-                a[n] = False
-                
-for prime in primes_sieve2 (1000000):
-    print (prime)
+for k in range (0, len (bools)):
+    if bools [k]:
+        print (k + 2)

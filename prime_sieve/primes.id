@@ -5,7 +5,7 @@ func main () {
         bools.add (true);
     }
     # floor sqrt 10000 = 100
-    for (i = 2; i <= 1000; i += 1) {
+    foreach (i in 2 ... 1000) {
         if (bools [i - 2]) {
             i2 = i * i;
             for (j = i2; j <= n; j += i) {
@@ -14,7 +14,7 @@ func main () {
         }
     }
     
-    for (k = 0; k < bools.getSize (); k+= 1) {
+    foreach (k in 0 .. len (bools)) {
        if (bools [k]) {
            print (k + 2);
        }
